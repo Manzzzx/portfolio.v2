@@ -9,17 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#FF5733',
-        secondary: '#2ECC71',
-        accent: '#F1C40F',
-        dark: '#2C3E50',
-        light: '#ECF0F1',
-        'neu-black': '#000000',
-        'neu-white': '#FFFFFF',
+        primary: '#FFD700',
+        secondary: '#FF69B4',
+        accent: '#00CED1',
+        'neu-black': '#1a1a1a',
+        'neu-white': '#ffffff',
+        light: '#f0f0f0',
       },
       boxShadow: {
-        'neu': '4px 4px 0 0 #000000',
-        'neu-lg': '8px 8px 0 0 #000000',
+        'neu': '4px 4px 0 0 #1a1a1a',
+        'neu-lg': '8px 8px 0 0 #1a1a1a',
       },
       borderWidth: {
         '3': '3px',

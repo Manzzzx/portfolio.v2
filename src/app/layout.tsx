@@ -6,36 +6,28 @@ import Navbar from '@/components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Nur Firmansyah Zamani | Web Developer & AI Enthusiast',
-  description: 'Portfolio profesional Nur Firmansyah Zamani, seorang web developer dan AI enthusiast. Menampilkan project-project terbaik dalam pengembangan web dan machine learning.',
-  keywords: 'web developer, AI, machine learning, portfolio, next.js, react, laravel, python',
+  title: 'Portfolio - Nur Firmansyah Zamani',
+  description: 'Personal portfolio showcasing web development and AI/ML projects by Nur Firmansyah Zamani',
+  keywords: ['web development', 'AI/ML', 'portfolio', 'next.js', 'react', 'laravel'],
   authors: [{ name: 'Nur Firmansyah Zamani' }],
   creator: 'Nur Firmansyah Zamani',
   publisher: 'Nur Firmansyah Zamani',
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    type: 'website',
+    title: 'Portfolio - Nur Firmansyah Zamani',
+    description: 'Personal portfolio showcasing web development and AI/ML projects by Nur Firmansyah Zamani',
+    siteName: 'Portfolio Nur Firmansyah Zamani',
     locale: 'id_ID',
-    url: 'https://your-portfolio-url.com',
-    title: 'Nur Firmansyah Zamani | Web Developer & AI Enthusiast',
-    description: 'Portfolio profesional Nur Firmansyah Zamani, seorang web developer dan AI enthusiast.',
-    siteName: 'Nur Firmansyah Zamani Portfolio',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Nur Firmansyah Zamani Portfolio'
-      }
-    ]
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nur Firmansyah Zamani | Web Developer & AI Enthusiast',
-    description: 'Portfolio profesional Nur Firmansyah Zamani, seorang web developer dan AI enthusiast.',
-    creator: '@yourtwitterhandle',
-    images: ['/og-image.jpg']
-  }
+    title: 'Portfolio - Nur Firmansyah Zamani',
+    description: 'Personal portfolio showcasing web development and AI/ML projects by Nur Firmansyah Zamani',
+  },
 }
 
 export default function RootLayout({
@@ -44,12 +36,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="id">
-      <body className={`${inter.className} bg-light min-h-screen`}>
+    <html lang="en">
+      <body className={`${inter.className} bg-neu-white min-h-screen flex flex-col`}>
         <Navbar />
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-8 flex-grow">
           {children}
         </main>
+        <footer className="py-4 text-center">
+          <p className="text-gray-600">Created By 💖</p>
+        </footer>
       </body>
     </html>
   )

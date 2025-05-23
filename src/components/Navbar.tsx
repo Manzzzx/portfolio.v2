@@ -1,90 +1,143 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 
-const Navbar = () => {
+export default function Navbar() {
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
 
-  const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '/contact' },
+  const links = [
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/contact', label: 'Contact' },
   ]
 
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      height: 0,
+      transition: {
+        duration: 0.2,
+        ease: 'easeInOut'
+      }
+    },
+    open: {
+      opacity: 1,
+      height: 'auto',
+      transition: {
+        duration: 0.3,
+        ease: 'easeInOut'
+      }
+    }
+  }
+
   return (
-    <nav className="bg-neu-white border-b-3 border-neu-black">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-2xl font-bold hover:text-primary transition-colors">
-            Portfolio
+    <header className="sticky top-0 z-50 bg-neu-white border-b-3 border-neu-black">
+      <nav className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold">
+            <motion.span
+              className="inline-block bg-primary px-4 py-2 border-3 border-neu-black shadow-neu"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Portfolio
+            </motion.span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
+          <div className="hidden md:flex items-center gap-4">
+            {links.map((link) => (
               <Link
-                key={item.name}
-                href={item.href}
-                className="px-4 py-2 text-neu-black hover:bg-primary border-3 border-neu-black 
-                          shadow-neu hover:shadow-neu-lg transition-all duration-200 font-bold"
+                key={link.href}
+                href={link.href}
+                className={`px-4 py-2 font-bold border-3 border-neu-black transition-all duration-200
+                          ${pathname === link.href
+                            ? 'bg-accent shadow-neu'
+                            : 'bg-neu-white hover:shadow-neu'
+                          }`}
               >
-                {item.name}
+                {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Mobile Navigation Button */}
-          <button
-            className="md:hidden p-2 border-3 border-neu-black shadow-neu hover:shadow-neu-lg"
+          {/* Mobile Menu Button */}
+          <motion.button
+            className="block md:hidden p-2 border-3 border-neu-black bg-neu-white hover:shadow-neu transition-all duration-200"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+            whileTap={{ scale: 0.95 }}
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            <motion.div
+              className="w-6 h-5 flex flex-col justify-between"
+              animate={isOpen ? "open" : "closed"}
             >
-              {isOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+              <motion.span
+                className="w-full h-0.5 bg-neu-black block"
+                animate={{
+                  rotate: isOpen ? 45 : 0,
+                  y: isOpen ? 10 : 0
+                }}
+              />
+              <motion.span
+                className="w-full h-0.5 bg-neu-black block"
+                animate={{
+                  opacity: isOpen ? 0 : 1
+                }}
+              />
+              <motion.span
+                className="w-full h-0.5 bg-neu-black block"
+                animate={{
+                  rotate: isOpen ? -45 : 0,
+                  y: isOpen ? -10 : 0
+                }}
+              />
+            </motion.div>
+          </motion.button>
         </div>
 
         {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="md:hidden pb-4"
-          >
-            <div className="flex flex-col space-y-3">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="px-4 py-2 text-neu-black hover:bg-primary border-3 border-neu-black 
-                            shadow-neu hover:shadow-neu-lg transition-all duration-200 font-bold text-center"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </div>
-    </nav>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={menuVariants}
+              className="block md:hidden overflow-hidden"
+            >
+              <div className="py-4 flex flex-col gap-3">
+                {links.map((link) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -20, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block px-4 py-2 font-bold border-3 border-neu-black transition-all duration-200
+                                ${pathname === link.href
+                                  ? 'bg-accent shadow-neu'
+                                  : 'bg-neu-white hover:shadow-neu'
+                                }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </header>
   )
-}
-
-export default Navbar 
+} 
