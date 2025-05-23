@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-Sebuah website portfolio profesional yang dibangun dengan Next.js, TypeScript, dan Tailwind CSS, menampilkan karya dan pengalaman saya dalam pengembangan web dan AI/ML.
+Sebuah website portfolio yang dibangun dengan Next.js, TypeScript, dan Tailwind CSS, menampilkan karya dan pengalaman saya dalam pengembangan web dan AI.
 
 ## 🚀 Fitur
 
@@ -8,8 +8,6 @@ Sebuah website portfolio profesional yang dibangun dengan Next.js, TypeScript, d
 - **Desain Neubrutalism**: Implementasi gaya desain modern dengan sentuhan unik
 - **Responsif**: Tampilan optimal di semua ukuran layar
 - **Animasi Smooth**: Menggunakan Framer Motion untuk transisi halus
-- **Dark Mode**: Dukungan tema gelap (coming soon)
-- **SEO Friendly**: Optimasi untuk mesin pencari
 - **Form Contact**: Formulir kontak interaktif dengan validasi
 - **Portfolio Dinamis**: Showcase project dengan kategori dan filter
 
@@ -20,8 +18,6 @@ Sebuah website portfolio profesional yang dibangun dengan Next.js, TypeScript, d
 - **Styling**: Tailwind CSS
 - **Animation**: Framer Motion
 - **Icons**: React Icons
-- **Form Handling**: React Hook Form (planned)
-- **Email Service**: EmailJS (planned)
 - **Deployment**: Vercel
 
 ## 📦 Instalasi & Penggunaan
@@ -69,31 +65,6 @@ portfolio.v2/
 3. Tambah/edit project di `src/app/projects/page.tsx`
 4. Kustomisasi komponen di `src/components/`
 
-
-## 📝 Todo
-
-- [ ] Implementasi dark mode
-- [ ] Integrasi blog dengan MDX
-- [ ] Tambah animasi page transition
-- [ ] Optimasi loading performance
-
-## 📄 License
-
-Project ini dilisensikan di bawah [MIT License](LICENSE)
-
 ## 🤝 Kontribusi
 
 Kontribusi, issues, dan feature requests sangat diterima. Silakan cek halaman [issues](https://github.com/Manzzzx/portfolio.v2/issues) untuk memulai.
-
-## 👨‍💻 Author
-
-- GitHub: [@Manzzzx](https://github.com/Manzzzx)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourusername)
-- Website: [Your Website](https://yourwebsite.com)
-
-## 🙏 Acknowledgments
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Framer Motion](https://www.framer.com/motion)
-- [React Icons](https://react-icons.github.io/react-icons)
