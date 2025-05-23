@@ -2,12 +2,11 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaReact, FaLaravel, FaGithub, FaLinkedin, FaDocker, FaAws, FaNode, FaVuejs, FaSass, FaAngular, FaJava, FaGitAlt, FaJenkins } from 'react-icons/fa'
-import { TbBrandNextjs, TbBrandVite, TbBrandNuxt } from 'react-icons/tb'
-import { BiLogoTailwindCss, BiLogoTypescript, BiLogoPostgresql, BiLogoMongodb, BiLogoRedux, BiLogoFirebase, BiLogoSpringBoot } from 'react-icons/bi'
-import { SiMysql, SiPhp, SiPython, SiTensorflow, SiExpress, SiPrisma, SiSupabase, SiNestjs, SiGraphql, SiRedis, SiVercel, SiJest, SiVitest, SiCypress, SiDjango, SiFastapi, SiScikitlearn, SiPandas, SiNumpy, SiWebpack, SiRabbitmq, SiElasticsearch, SiAntdesign, SiMaterialdesign, SiStorybook, SiSwagger, SiPostman, SiGithubactions, SiKubernetes } from 'react-icons/si'
+import { FaReact, FaLaravel, FaGithub, FaLinkedin, FaDocker, FaNode, FaVuejs, FaGitAlt } from 'react-icons/fa'
+import { TbBrandNextjs, TbBrandVite, } from 'react-icons/tb'
+import { BiLogoTailwindCss, BiLogoTypescript, BiLogoPostgresql, BiLogoMongodb } from 'react-icons/bi'
+import { SiMysql, SiPhp, SiPython, SiTensorflow, SiExpress, SiVercel, SiPandas, SiNumpy, SiPostman,} from 'react-icons/si'
 import { HiDownload } from 'react-icons/hi'
-import { BsRobot } from 'react-icons/bs'
 
 export default function Home() {
   const skillCategories = [
@@ -98,7 +97,7 @@ export default function Home() {
                 className="flex items-center gap-2 mt-4"
               >
                 <span className="text-2xl md:text-3xl font-bold bg-accent px-3 py-1 border-3 border-neu-black shadow-neu">
-                  Web Developer
+                  Tech Enthusiast
                 </span>
               </motion.div>
             </div>
