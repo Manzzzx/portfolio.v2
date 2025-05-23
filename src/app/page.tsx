@@ -1,101 +1,210 @@
-import Image from "next/image";
+'use client'
+
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { FaReact, FaLaravel, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { TbBrandNextjs } from 'react-icons/tb'
+import { BiLogoTailwindCss, BiLogoTypescript } from 'react-icons/bi'
+import { SiMysql, SiPhp, SiPython, SiTensorflow } from 'react-icons/si'
+import { HiDownload } from 'react-icons/hi'
+import { BsRobot } from 'react-icons/bs'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const skills = [
+    { name: 'Laravel', icon: <FaLaravel className="text-4xl mb-2" /> },
+    { name: 'Next.js', icon: <TbBrandNextjs className="text-4xl mb-2" /> },
+    { name: 'React', icon: <FaReact className="text-4xl mb-2" /> },
+    { name: 'TypeScript', icon: <BiLogoTypescript className="text-4xl mb-2" /> },
+    { name: 'Tailwind', icon: <BiLogoTailwindCss className="text-4xl mb-2" /> },
+    { name: 'PHP', icon: <SiPhp className="text-4xl mb-2" /> },
+    { name: 'MySQL', icon: <SiMysql className="text-4xl mb-2" /> },
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const aiSkills = [
+    { name: 'Python', icon: <SiPython className="text-4xl mb-2" /> },
+    { name: 'TensorFlow', icon: <SiTensorflow className="text-4xl mb-2" /> },
+    { name: 'AI/ML', icon: <BsRobot className="text-4xl mb-2" /> },
+  ]
+
+  return (
+    <div className="min-h-[calc(100vh-4rem)]">
+      {/* Hero Section */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-8"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="space-y-4">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-lg font-medium text-gray-600"
+              >
+              </motion.p>
+              <h1 className="text-5xl md:text-6xl font-bold space-y-4">
+                Halo! Saya
+                <div className="mt-4">
+                  <span className="bg-primary px-4 py-2 border-3 border-neu-black shadow-neu inline-block">
+                    Nur Firmansyah Zamani
+                  </span>
+                </div>
+              </h1>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="flex items-center gap-2 mt-4"
+              >
+                <span className="text-2xl md:text-3xl font-bold bg-accent px-3 py-1 border-3 border-neu-black shadow-neu">
+                  Web Developer
+                </span>
+              </motion.div>
+            </div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="text-lg text-gray-600 max-w-2xl"
+            >
+              Saya seorang mahasiswa yang passionate dalam pengembangan web dan artificial intelligence.
+              Fokus pada teknologi modern seperti Laravel dan Next.js untuk menciptakan solusi digital yang inovatif,
+              serta mengeksplorasi penerapan AI dalam pengembangan web.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="flex flex-wrap gap-4"
+            >
+              <Link
+                href="/projects"
+                className="flex items-center gap-2 px-8 py-4 bg-secondary text-neu-black font-bold 
+                         border-3 border-neu-black shadow-neu hover:shadow-neu-lg 
+                         transition-all duration-200"
+              >
+                <span>Lihat Projects</span>
+              </Link>
+              <Link
+                href="/contact"
+                className="flex items-center gap-2 px-8 py-4 bg-accent text-neu-black font-bold 
+                         border-3 border-neu-black shadow-neu hover:shadow-neu-lg 
+                         transition-all duration-200"
+              >
+                <span>Hubungi Saya</span>
+              </Link>
+              <a
+                href="/cv.pdf"
+                className="flex items-center gap-2 px-6 py-4 bg-neu-white text-neu-black font-bold 
+                         border-3 border-neu-black shadow-neu hover:shadow-neu-lg 
+                         transition-all duration-200"
+              >
+                <HiDownload className="text-xl" />
+                <span>Download CV</span>
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="flex gap-4 pt-4"
+            >
+              <a
+                href="https://github.com/Manzzzx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-neu-white border-3 border-neu-black shadow-neu 
+                         hover:shadow-neu-lg transition-all duration-200 group"
+              >
+                <FaGithub className="text-2xl group-hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href="https://linkedin.com/in/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-neu-white border-3 border-neu-black shadow-neu 
+                         hover:shadow-neu-lg transition-all duration-200 group"
+              >
+                <FaLinkedin className="text-2xl group-hover:scale-110 transition-transform" />
+              </a>
+            </motion.div>
+
+            {/* GitHub Contributions */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+              className="pt-8"
+            >
+              <div className="border-3 border-neu-black shadow-neu hover:shadow-neu-lg transition-all duration-200 p-4 bg-neu-white">
+                <h3 className="font-bold text-lg mb-4">GitHub Contributions</h3>
+                <img
+                  src={`https://ghchart.rshah.org/Manzzzx`}
+                  alt="GitHub Contributions Graph"
+                  className="w-full"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto space-y-12">
+          <div>
+            <h2 className="text-3xl font-bold mb-12 inline-block bg-light px-4 border-3 border-neu-black shadow-neu">
+              Web Development
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              {skills.map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  className="p-6 bg-neu-white border-3 border-neu-black shadow-neu 
+                           hover:shadow-neu-lg transition-all duration-200 text-center
+                           flex flex-col items-center justify-center"
+                >
+                  {skill.icon}
+                  <span className="font-medium">{skill.name}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold mb-12 inline-block bg-accent px-4 border-3 border-neu-black shadow-neu">
+              AI & Machine Learning
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+              {aiSkills.map((skill, index) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                  className="p-6 bg-neu-white border-3 border-neu-black shadow-neu 
+                           hover:shadow-neu-lg transition-all duration-200 text-center
+                           flex flex-col items-center justify-center"
+                >
+                  {skill.icon}
+                  <span className="font-medium">{skill.name}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }

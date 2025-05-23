@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio Website
 
-## Getting Started
+Sebuah website portfolio profesional yang dibangun dengan Next.js, TypeScript, dan Tailwind CSS, menampilkan karya dan pengalaman saya dalam pengembangan web dan AI/ML.
 
-First, run the development server:
+## 🚀 Fitur
 
+- **Modern Tech Stack**: Next.js 14, TypeScript, Tailwind CSS
+- **Desain Neubrutalism**: Implementasi gaya desain modern dengan sentuhan unik
+- **Responsif**: Tampilan optimal di semua ukuran layar
+- **Animasi Smooth**: Menggunakan Framer Motion untuk transisi halus
+- **Dark Mode**: Dukungan tema gelap (coming soon)
+- **SEO Friendly**: Optimasi untuk mesin pencari
+- **Form Contact**: Formulir kontak interaktif dengan validasi
+- **Portfolio Dinamis**: Showcase project dengan kategori dan filter
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animation**: Framer Motion
+- **Icons**: React Icons
+- **Form Handling**: React Hook Form (planned)
+- **Email Service**: EmailJS (planned)
+- **Deployment**: Vercel
+
+## 📦 Instalasi & Penggunaan
+
+1. Clone repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Manzzzx/portfolio.v2.git
+cd portfolio.v2
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
+```bash
+npm install
+# atau
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Jalankan development server
+```bash
+npm run dev
+# atau
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Buka [http://localhost:3000](http://localhost:3000) di browser
 
-## Learn More
+## 📁 Struktur Project
 
-To learn more about Next.js, take a look at the following resources:
+```
+portfolio.v2/
+├── src/
+│   ├── app/              # App router pages
+│   ├── components/       # React components
+│   ├── lib/             # Utility functions
+│   └── styles/          # Global styles
+├── public/              # Static assets
+├── tailwind.config.js   # Tailwind configuration
+└── tsconfig.json        # TypeScript configuration
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Kustomisasi
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Edit konten di `src/app/page.tsx`
+2. Modifikasi tema di `tailwind.config.js`
+3. Tambah/edit project di `src/app/projects/page.tsx`
+4. Kustomisasi komponen di `src/components/`
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Todo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Implementasi dark mode
+- [ ] Integrasi blog dengan MDX
+- [ ] Tambah animasi page transition
+- [ ] Optimasi loading performance
+
+## 📄 License
+
+Project ini dilisensikan di bawah [MIT License](LICENSE)
+
+## 🤝 Kontribusi
+
+Kontribusi, issues, dan feature requests sangat diterima. Silakan cek halaman [issues](https://github.com/Manzzzx/portfolio.v2/issues) untuk memulai.
+
+## 👨‍💻 Author
+
+- GitHub: [@Manzzzx](https://github.com/Manzzzx)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourusername)
+- Website: [Your Website](https://yourwebsite.com)
+
+## 🙏 Acknowledgments
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Framer Motion](https://www.framer.com/motion)
+- [React Icons](https://react-icons.github.io/react-icons)
