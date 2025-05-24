@@ -18,9 +18,7 @@ export default function About() {
         <div className="bg-neu-white p-8 border-3 border-neu-black shadow-neu-lg">
           <p className="text-lg mb-6">
             Saya adalah mahasiswa yang memiliki passion dalam pengembangan web.
-            Dengan kombinasi pembelajaran di kampus dan eksplorasi mandiri,
-            saya terus mengembangkan kemampuan dalam membuat aplikasi web yang
-            modern dan fungsional.
+            Dengan kombinasi pembelajaran di kampus dan eksplorasi mandiri.
           </p>
             <p className="text-lg">
             Saya percaya bahwa pembelajaran tidak pernah berhenti dan selalu 
@@ -41,11 +39,10 @@ export default function About() {
           className="bg-neu-white p-8 border-3 border-neu-black shadow-neu-lg"
         >
           <h3 className="text-xl font-bold mb-2">Teknik Informatika</h3>
-          <p className="text-gray-600 mb-4">Universitas Muhadi Setiabudi • 2023-Sekarang</p>
+          <p className="text-gray-600 mb-4">Universitas Muhadi Setiabudi • 2023 - Sekarang</p>
           <p className="text-gray-700">
             Fokus pada pengembangan web dan mobile, dengan minat khusus dalam
-            teknologi frontend modern. Aktif dalam kegiatan kampus dan
-            project-project pengembangan website.
+            teknologi frontend modern.
           </p>
         </motion.div>
       </section>

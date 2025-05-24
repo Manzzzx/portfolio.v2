@@ -31,15 +31,14 @@ export default function Home() {
       ]
     },
     {
-      title: "Database & Storage",
+      title: "Database",
       skills: [
         { name: 'MySQL', icon: <SiMysql className="text-4xl mb-2 text-[#4479A1]" /> },
         { name: 'PostgreSQL', icon: <BiLogoPostgresql className="text-4xl mb-2 text-[#4169E1]" /> },
-        { name: 'MongoDB', icon: <BiLogoMongodb className="text-4xl mb-2 text-[#47A248]" /> },
       ]
     },
     {
-      title: "DevOps & Cloud",
+      title: "DevOps & Tools",
       skills: [
         { name: 'Docker', icon: <FaDocker className="text-4xl mb-2 text-[#2496ED]" /> },
         { name: 'Vercel', icon: <SiVercel className="text-4xl mb-2 text-black" /> },
@@ -47,20 +46,11 @@ export default function Home() {
       ]
     },
     {
-      title: "Testing & Tools",
+      title: "Testing",
       skills: [
         { name: 'Postman', icon: <SiPostman className="text-4xl mb-2 text-[#FF6C37]" /> },
       ]
     },
-    {
-      title: "AI & Machine Learning",
-      skills: [
-        { name: 'Python', icon: <SiPython className="text-4xl mb-2 text-[#3776AB]" /> },
-        { name: 'TensorFlow', icon: <SiTensorflow className="text-4xl mb-2 text-[#FF6F00]" /> },
-        { name: 'Pandas', icon: <SiPandas className="text-4xl mb-2 text-[#150458]" /> },
-        { name: 'NumPy', icon: <SiNumpy className="text-4xl mb-2 text-[#013243]" /> },
-      ]
-    }
   ]
 
   return (
@@ -97,7 +87,7 @@ export default function Home() {
                 className="flex items-center gap-2 mt-4"
               >
                 <span className="text-2xl md:text-3xl font-bold bg-accent px-3 py-1 border-3 border-neu-black shadow-neu">
-                  Tech Enthusiast
+                  Mie Ayam Enthusiast
                 </span>
               </motion.div>
             </div>
@@ -108,7 +98,7 @@ export default function Home() {
               transition={{ delay: 0.6 }}
               className="text-lg text-gray-600 max-w-2xl"
             >
-              Saya seorang mahasiswa yang passionate dalam pengembangan web dan artificial intelligence.
+              Saya seorang mahasiswa yang passionate dalam pengembangan web.
               Fokus pada teknologi modern seperti Laravel dan Next.js untuk menciptakan solusi digital yang inovatif,
               serta mengeksplorasi penerapan AI dalam pengembangan web.
             </motion.p>
@@ -162,7 +152,7 @@ export default function Home() {
                 <FaGithub className="text-2xl group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-neu-white border-3 border-neu-black shadow-neu 
