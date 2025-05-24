@@ -5,8 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaReact, FaLaravel, FaGithub, FaLinkedin, FaDocker, FaNode, FaVuejs, FaGitAlt } from 'react-icons/fa'
 import { TbBrandNextjs, TbBrandVite, } from 'react-icons/tb'
-import { BiLogoTailwindCss, BiLogoTypescript, BiLogoPostgresql, BiLogoMongodb } from 'react-icons/bi'
-import { SiMysql, SiPhp, SiPython, SiTensorflow, SiExpress, SiVercel, SiPandas, SiNumpy, SiPostman,} from 'react-icons/si'
+import { BiLogoTailwindCss, BiLogoTypescript, BiLogoPostgresql } from 'react-icons/bi'
+import { SiMysql, SiPhp, SiExpress, SiVercel, SiPostman } from 'react-icons/si'
 import { HiDownload } from 'react-icons/hi'
 
 export default function Home() {
