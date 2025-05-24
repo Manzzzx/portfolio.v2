@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaReact, FaLaravel, FaGithub, FaLinkedin, FaDocker, FaNode, FaVuejs, FaGitAlt } from 'react-icons/fa'
 import { TbBrandNextjs, TbBrandVite, } from 'react-icons/tb'
 import { BiLogoTailwindCss, BiLogoTypescript, BiLogoPostgresql, BiLogoMongodb } from 'react-icons/bi'
@@ -171,10 +172,13 @@ export default function Home() {
             >
               <div className="border-3 border-neu-black shadow-neu hover:shadow-neu-lg transition-all duration-200 p-4 bg-neu-white">
                 <h3 className="font-bold text-lg mb-4">GitHub Contributions</h3>
-                <img
+                <Image
                   src={`https://ghchart.rshah.org/Manzzzx`}
                   alt="GitHub Contributions Graph"
                   className="w-full"
+                  width={800}
+                  height={128}
+                  unoptimized
                 />
               </div>
             </motion.div>
